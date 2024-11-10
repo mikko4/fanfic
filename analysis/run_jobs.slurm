@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#SBATCH --job-name=process_fanfics
+#SBATCH --array=0-39
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=64G
+#SBATCH --output=logs/2021/job_%A_%a.out
+#SBATCH --error=logs/2021/job_%A_%a.err
+#SBATCH --time=1-00:00:00
+
+# Load modules or activate environments as needed
+conda activate fanfic-env
+
+# Run the worker script with the SLURM task ID
+python worker.py 03.22-09.22 $SLURM_ARRAY_TASK_ID
