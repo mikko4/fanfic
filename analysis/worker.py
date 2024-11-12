@@ -14,7 +14,9 @@ if __name__ == "__main__":
     part_number = sys.argv[2]
 
     # Load the DataFrame part
-    df = pd.read_pickle(f"splits/{year}/fanfics_part_{part_number}.pkl")
+    df = pd.read_pickle(
+        f"/scratch/tripakis.m/data-research/fanfic/splits/{year}/fanfics_part_{part_number}.pkl"
+    )
 
     # Process the DataFrame
     result_df = process_transcripts(

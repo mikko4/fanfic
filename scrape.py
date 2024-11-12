@@ -279,8 +279,8 @@ def scrape_all_pages(start_page, end_page, base_query):
         work_details += page_works
         if p % 20 == 0:
             print(f"Page {p}")
-        if p % 100 == 0:
-            make_csv(work_details, f"{start_num}-{end_page}")
+        # if p % 100 == 0:
+        #     make_csv(work_details, f"{start_num}-{end_page}")
         driver.quit()
 
     return work_details

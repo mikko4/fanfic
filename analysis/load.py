@@ -7,7 +7,9 @@ from utils import create_open
 
 # Define base directory paths
 base_dir = "/scratch/tripakis.m/data-research/fanfic/scraped/"  # Directory containing the folders or ZIP files
-output_base_dir = "splits"  # Directory to save split files
+output_base_dir = (
+    "/scratch/tripakis.m/data-research/fanfic/splits/"  # Directory to save split files
+)
 
 # Ensure the output base directory exists
 os.makedirs(output_base_dir, exist_ok=True)
