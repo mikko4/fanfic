@@ -12,4 +12,4 @@
 conda activate fanfic
 
 # Run the worker script with the SLURM task ID
-python worker.py 03.22-09.22 $SLURM_ARRAY_TASK_ID
+python worker.py 03.24-09.24 $SLURM_ARRAY_TASK_ID
