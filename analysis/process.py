@@ -18,7 +18,7 @@ logging.basicConfig(
 )
 
 
-def split_text_into_percentiles(text, window_size=500, num_windows=100):
+def split_text_into_percentiles(text: str, window_size=500, num_windows=100):
     words = text.split()
     total_words = len(words)
 
@@ -87,7 +87,7 @@ def process_transcripts(df, output_file, num_percentiles=100, save_interval=4):
 
         # Split text into percentiles
         chunks = split_text_into_percentiles(
-            transcript_text, window_size=500, num_windows=num_percentiles
+            str(transcript_text), window_size=500, num_windows=num_percentiles
         )
 
         percentile_scores = []

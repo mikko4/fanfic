@@ -291,7 +291,7 @@ PROXIES = [
     ("us-wa.proxymesh.com", 31280),
     ("us-il.proxymesh.com", 31280),
     ("fr.proxymesh.com", 31280),
-    ("nl.proxymesh.com", 31280),
+    # ("nl.proxymesh.com", 31280),
     ("au.proxymesh.com", 31280),
     ("sg.proxymesh.com", 31280),
     ("de.proxymesh.com", 31280),
@@ -301,8 +301,8 @@ PROXIES = [
     ("us-dc.proxymesh.com", 31280),
 ]
 
-START_MONTH = 42
-END_MONTH = 48
+START_MONTH = 48
+END_MONTH = 54
 
 if __name__ == "__main__":
     proxy_rotator = ProxyRotator(PROXIES)
@@ -312,8 +312,8 @@ if __name__ == "__main__":
     base_query = f"https://archiveofourown.org/works/search?work_search%5Bquery%5D=%28%22Fluff%22+OR+%22Alternate+Universe%22+OR+%22Angst%22+OR+%22Hurt%2FComfort%22+OR+%22Family%22+OR+%22Friendship%22+OR+%22Not+Canon+Compliant%22+OR+%22Humor%22+OR+%22Alternate+Universe+-+Canon+Divergence%22%29++NOT+%28%22Sexual+Content%22+OR+%22Sex%22+OR+%22Smut%22+OR+%22Oral+Sex%22+OR+%22BDSM%22+OR+%22Porn%22+OR+%22Anal%22+OR+%22Anal+Sex%22+OR+%22Fingerfucking%22+OR+%22Non-Consensual%22+OR+%22Plot+What+Plot%2FPorn+Without+Plot%22+OR+%22Dom%2Fsub%22+OR+%22Blow+Jobs%22+OR+%22Consent%22+OR+%22Rape%2FNon-con+Elements%22+OR+%22Vaginal%22+OR+%22Bodily+Fluids%22+OR+%22Kinks%22+OR+%22Homosexuality%22+OR+%22Cuddling+%26+Snuggling%22+OR+%22Child+Abuse%22+OR+%22Gay%22+OR+%22Familial+Abuse%22+OR+%22Fluff+and+Smut%22+OR+%22Roughness%22%29&work_search%5Btitle%5D=&work_search%5Bcreators%5D=&work_search%5Brevised_at%5D={mos}&work_search%5Bcomplete%5D=T&work_search%5Bcrossover%5D=&work_search%5Bsingle_chapter%5D=0&work_search%5Bword_count%5D=&work_search%5Blanguage_id%5D=en&work_search%5Bfandom_names%5D=&work_search%5Brating_ids%5D=&work_search%5Bcharacter_names%5D=&work_search%5Brelationship_names%5D=&work_search%5Bfreeform_names%5D=&work_search%5Bhits%5D=%3E2000&work_search%5Bkudos_count%5D=&work_search%5Bcomments_count%5D=&work_search%5Bbookmarks_count%5D=&work_search%5Bsort_column%5D=_score&work_search%5Bsort_direction%5D=desc&commit=Search"
     # base_query = f"https://archiveofourown.org/works/search?work_search[query]=&work_search[hits]=%3E100&work_search[language_id]=en"
 
-    start_num = 1001
-    end_num = 2000
+    start_num = 801
+    end_num = 1000
     work_details = scrape_all_pages(start_num, end_num, base_query)
     # csv_name = get_date_range_from_string(mos)
     csv_name = f"{start_num}-{end_num}"

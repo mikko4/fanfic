@@ -5,6 +5,7 @@ analysis/logs/
 splits/
 results/
 *.csv
+scraped/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
