@@ -79,6 +79,9 @@ def process_transcripts(df, output_file, num_percentiles=100, save_interval=4):
     transcripts_processed = 0  # Counter for transcripts processed in this run
 
     for idx, (transcript_id, transcript_text) in enumerate(zip(df["url"], df["text"])):
+        if not transcript_id or not transcript_text:
+            continue
+
         current_time = time.time()
 
         if transcript_id in processed_transcript_ids:
@@ -87,7 +90,7 @@ def process_transcripts(df, output_file, num_percentiles=100, save_interval=4):
 
         # Split text into percentiles
         chunks = split_text_into_percentiles(
-            str(transcript_text), window_size=500, num_windows=num_percentiles
+            transcript_text, window_size=500, num_windows=num_percentiles
         )
 
         percentile_scores = []
