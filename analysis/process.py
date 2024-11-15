@@ -79,7 +79,8 @@ def process_transcripts(df, output_file, num_percentiles=100, save_interval=4):
     transcripts_processed = 0  # Counter for transcripts processed in this run
 
     for idx, (transcript_id, transcript_text) in enumerate(zip(df["url"], df["text"])):
-        if not transcript_id or not transcript_text:
+        if not transcript_id or not isinstance(transcript_text, str):
+            print(f"Skipping transcript {transcript_id}, no text found.")
             continue
 
         current_time = time.time()
